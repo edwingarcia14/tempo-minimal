@@ -1,0 +1,150 @@
+/* Reset básico para evitar espacios indeseados */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables Globales para control total */
+:root {
+    --bg-color: #1D1D1D;
+    --text-color: #FFFFFF;
+    --accent-color: #FFFFFF;
+    --sphere-size: 200px;
+    --font-main: 'Roboto Mono', monospace;
+
+    --transition-speed: .3s;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;   
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.stopwatch-section {
+    position: relative; /* Necesario para que la esfera pueda posicionarse con absolute */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stopwatch-container {
+    width: var(--sphere-size);
+    height: var(--sphere-size);
+    border: 1px solid var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Asegura que el cronómetro quede por encima de la esfera */
+    box-shadow: 0 0 50px rgba(255, 255, 255, .3);
+    transition: box-shadow var(--transition-speed) ease;
+}
+
+.stopwatch-display {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+.stopwatch-controls {
+    display: flex;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+.btn-control {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform var(--transition-speed) ease;
+}
+
+/* Estilos específicos de botones */
+.btn-stop {
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-color);
+}
+
+.btn-toggle {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 10px solid var(--accent-color);
+    background: none;
+    transition: all var(--transition-speed) ease;
+}
+
+.btn-toggle.running {
+    border: none;  /* Quitamos el triángulo */
+    width: 10px;
+    height: 10px;
+    display: flex;
+    justify-content: space-between;
+    background: none;
+}
+
+.btn-toggle.running::before,
+.btn-toggle.running::after {
+    content: "";
+    display: block;
+    width: 3px; /* Grosor de la barra */
+    height: 100%; /* Altura completa */
+    background-color: var(--accent-color);
+}
+
+.main-footer {
+    position: fixed;
+    bottom: 20px;
+    font-size: .8rem;
+    opacity: .7;
+}
+
+/* Esfera decorativa */
+.seconds-sphere {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+
+    /* La animación depende de este keyframe y el tiempo en JS */
+    animation: rotacion 60s linear infinite;
+    animation-play-state: paused;
+}
+
+@keyframes rotacion {
+    from {
+        transform: rotate(-90deg) translateX(100px);
+    }
+    to {
+        transform: rotate(270deg) translateX(100px);
+    }
+}
+
+/* Efecto hover: Solo para dispositivos con mouse */
+@media (hover: hover) {
+    .btn-control:hover {
+        transform: scale(1.5);
+        /* Esto crea un resplandor blanco alrededor del botón */
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+    }
+
+    .stopwatch-container:hover {
+        box-shadow: 0 0 70px rgba(255, 255, 255, .5);
+    }
+}

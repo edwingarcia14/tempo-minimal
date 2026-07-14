@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="description" content="Tempo es un cronómetro minimalista de alta precisión diseñado para un flujo de trabajo enfocado.">
+    <meta name="author" content="Edwin García">
+
+    <title>Tempo | Cronómetro Minimalista</title>
+
+    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <main class="main-content">
+
+        <section class="stopwatch-section">
+
+            <article class="stopwatch-container">
+                <time id="stopwatch-display" class="stopwatch-display">00:00</time>
+
+                <nav class="stopwatch-controls">
+                    <button id="btn-stop" class="btn-control btn-stop" aria-label="Reiniciar cronómetro"></button>
+                    <button id="btn-play-pause" class="btn-control btn-toggle" aria-label="Iniciar o pausar cronómetro"></button>
+                </nav>
+            </article>
+
+            <aside id="seconds-sphere" class="seconds-sphere" aria-hidden="true"></aside>
+
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p class="footer-copyright">&copy; 2026 Tempo - Creado por Edwin García</p>
+    </footer>
+
+    <script src="./js/scripts.js"></script>
+
+</body>
+</html>
