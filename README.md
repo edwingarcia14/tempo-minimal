@@ -1,6 +1,12 @@
-# Tempo ⏱️ | Cronómetro Minimalista
+# Tempo Minimal ⏱️ | Cronómetro Minimalista
 
-**Tempo** es un cronómetro minimalista de alta precisión, diseñado para profesionales que buscan un flujo de trabajo enfocado y sin distracciones. La simplicidad se une a la robustez técnica.
+**Tempo Minimal** es un cronómetro minimalista de alta precisión, diseñado para profesionales que buscan un flujo de trabajo enfocado y sin distracciones. La simplicidad se une a la robustez técnica.
+
+## 🖼️ Vista Previa del Sitio
+
+<p align="center">
+  <img src="assets/img/tempo-minimal.png" alt="Vista previa de Tempo Minimal" width="100%" />
+</p>
 
 ## 🚀 Tecnologías
 * **HTML5:** Estructura semántica orientada a la accesibilidad.
@@ -15,10 +21,8 @@
 
 ## 🛠️ Estructura del Proyecto
 ```text
-tempo/
-├── assets/
-│   └── icons/
-│       └── favicon.png
+tempo-minimal/
+├── assets/             # Iconos e imágenes (logos, brand, etc.)
 ├── css/
 │   └── style.css       # Estilos, animaciones y diseño responsivo
 ├── js/
@@ -41,4 +45,8 @@ Este proyecto fue un ejercicio de **Ingeniería de Software aplicado al Frontend
 Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
 
 ---
-*Creado por Edwin García | 2026*
+<p align="center">
+  <img src="assets/brand/logo.png" alt="Sello Many" width="45" />
+  <br />
+  <sub><b>Desarrollado por Edwin García</b> | 2026</sub>
+</p>
