@@ -1,23 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <meta name="description" content="Tempo es un cronómetro minimalista de alta precisión diseñado para un flujo de trabajo enfocado.">
     <meta name="author" content="Edwin García">
+    <meta name="theme-color" content="#1D1D1D">
 
-    <title>Tempo | Cronómetro Minimalista</title>
+    <title>Tempo Minimal | Cronómetro Minimalista</title>
 
-    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.png">
+    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.png">
+    <link rel="manifest" href="/manifest.json">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="./css/style.css">
+
+    <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
 
     <main class="main-content">
@@ -25,11 +29,19 @@
         <section class="stopwatch-section">
 
             <article class="stopwatch-container">
-                <time id="stopwatch-display" class="stopwatch-display">00:00</time>
+                <time id="stopwatch-display" class="stopwatch-display">00:00.<small class="ms-digits">00</small></time>
 
                 <nav class="stopwatch-controls">
-                    <button id="btn-stop" class="btn-control btn-stop" aria-label="Reiniciar cronómetro"></button>
-                    <button id="btn-play-pause" class="btn-control btn-toggle" aria-label="Iniciar o pausar cronómetro"></button>
+                    <button id="btn-stop" class="btn-control" aria-label="Reiniciar cronómetro">
+                        <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
+                    </button>
+                    <button id="btn-lap" class="btn-control" aria-label="Registrar vuelta">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg>
+                    </button>
+                    <button id="btn-play-pause" class="btn-control" aria-label="Iniciar o pausar cronómetro">
+                        <svg class="icon-play" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg>
+                        <svg class="icon-pause" viewBox="0 0 24 24"><path d="M6 4h4v16H6zm8 0h4v16h-4z"/></svg>
+                    </button>
                 </nav>
             </article>
 
@@ -37,13 +49,35 @@
 
         </section>
 
+        <!-- Historial de vueltas -->
+        <section id="laps-container" class="laps-container hidden">
+            <ul id="laps-list" class="laps-list"></ul>
+        </section>
+
     </main>
 
     <footer class="main-footer">
-        <p class="footer-copyright">&copy; 2026 Tempo - Creado por Edwin García</p>
+        <p class="footer-copyright">&copy; 2026 Tempo Minimal</p>
+        <address class="footer-author">
+            <span class="author-text">
+                <small>Desarrollado por</small>
+                <strong>Edwin García</strong>
+            </span>
+            <aside class="brand-aside">
+                <img class="logo-brand" src="/assets/brand/logo.png" alt="Marca Edwin García">
+            </aside>
+        </address>
     </footer>
 
-    <script src="./js/scripts.js"></script>
+    <script src="/js/scripts.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').catch(() => {});
+            });
+        }
+    </script>
 
 </body>
+
 </html>

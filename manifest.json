@@ -1,0 +1,23 @@
+{
+  "short_name": "Tempo",
+  "name": "Tempo Minimal Stopwatch",
+  "description": "Cronómetro minimalista de alta precisión diseñado para un flujo de trabajo enfocado.",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "/assets/icons/favicon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/icons/favicon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#1D1D1D",
+  "theme_color": "#1D1D1D",
+  "display": "standalone",
+  "orientation": "portrait"
+}
